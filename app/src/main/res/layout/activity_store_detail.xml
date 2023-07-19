@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vehicle.mart.Store_detail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="5dp"
+            android:text="VEHICLE INFORMATION"
+            android:textColor="@color/app_color"
+            android:textSize="30dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_Vehiclename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Vehicle Name"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_vehicletype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Vehicle Type"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Brand"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Model"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_mileage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Mileage"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Year"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_fueltype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Fuel Type"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_transmission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Transmission"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_enginetype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Engine Type"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_enginecapacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Engine Capacity"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_registercity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Register City"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Type"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_transactiontype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Transaction Type"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Price"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="4dp"
+            app:boxCornerRadiusBottomEnd="35dp"
+            app:boxCornerRadiusBottomStart="35dp"
+            app:boxCornerRadiusTopEnd="35dp"
+            app:boxCornerRadiusTopStart="35dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Description"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_margin="24dp"
+                android:layout_gravity="left"
+                android:id="@+id/image_view"
+                android:layout_width="160dp"
+                android:layout_height="160dp"/>
+
+            <ImageView   android:layout_margin="40dp"
+                android:layout_gravity="right|center"
+                android:tint="@color/app_color"
+                android:src="@drawable/ic_baseline_add_a_photo_24"
+                android:id="@+id/iv_add"
+                android:layout_width="48dp"
+                android:layout_height="48dp"/>
+        </FrameLayout>
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="SAVE NEW "
+            android:textSize="15dp"
+            android:layout_margin="40dp"/>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vehicle.mart.VehicleDetailsActivity">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="none">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rec_car_1"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="3dp"
+            android:id="@+id/iv_rec_car_1"/>
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/rec_car_2"-->
+<!--            android:layout_marginTop="7dp"-->
+<!--            android:id="@+id/iv_rec_car_2"/>-->
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/rec_car_3"-->
+<!--            android:layout_marginTop="7dp"-->
+<!--            android:id="@+id/iv_rec_car_3"/>-->
+    </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Audi i8"
+            android:textColor="@color/app_color"
+            android:id="@+id/tv_Name"
+            android:textSize="35dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:text="Price"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="245dp"
+                android:id="@+id/tv_price"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppins_regular"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:text="Location"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="215dp"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:id="@+id/tv_location"
+                android:fontFamily="@font/poppins_regular"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:text="Mileage"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="210dp"
+
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:id="@+id/tv_mileage"
+                android:fontFamily="@font/poppins_regular"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:text="Engine"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="210dp"
+                android:text="1500-1900 cc"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:id="@+id/tv_engine"
+                android:fontFamily="@font/poppins_regular"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:text="Transmission"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:id="@+id/tv_transmission"
+
+                android:fontFamily="@font/poppins_regular"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:text="Fuel Type"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="172dp"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:id="@+id/fuel"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:text="Sitting Capacity"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="190dp"
+                android:text="5"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppins_regular"
+                android:id="@+id/seats"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:text="Description:"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:textColor="@color/grey"
+            android:textSize="14dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/tv_description"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="_______________________________________________"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/app_color"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/tv_sellerdetail"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="18dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Seller Detail"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_shopname"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="18dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="HONDA Motors"
+                android:textColor="@color/app_color"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/vector"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:id="@+id/iv_whatsapp"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fivestars"
+                android:layout_gravity="center"
+                android:layout_marginLeft="80dp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:textColor="@color/grey"
+            android:textSize="14dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/tv_address"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/s"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="18dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Status:"
+                android:textColor="@color/black"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="18dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="HONDA Motors"
+                android:textColor="@color/app_color"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+<!--        <Button-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:text="Buy now"-->
+<!--            android:fontFamily="@font/poppins_semibold"/>-->
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuyNow_Screen"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Audi i8"
+        android:textStyle="bold"
+        android:textColor="@color/app_color"
+        android:textSize="45dp"
+        android:padding="3dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/tv_carname"
+        android:layout_marginLeft="10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1500 to 1900 cc"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tv_cc"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Petrol and Diesel"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tv_type"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25 km/Litre"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tv_litre"
+        />
+</LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_car"
+            android:layout_width="221dp"
+            android:layout_height="155dp"
+            android:layout_margin="15dp"
+            android:padding="5dp"
+            android:src="@drawable/car" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textSize="20dp"
+        android:layout_marginLeft="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/app_color"
+        android:id="@+id/tv_price"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="350,999$"
+        android:textColor="@color/black"
+        android:layout_marginLeft="240dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:id="@+id/tv_rupees"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Token Price"
+            android:textSize="20dp"
+            android:layout_marginLeft="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/app_color"
+            android:id="@+id/tv_tokenprice"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="350,99$"
+            android:textColor="@color/black"
+            android:layout_marginLeft="190dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:id="@+id/tv_tokenrupees"/>
+    </LinearLayout>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textStyle="bold"
+    android:layout_marginLeft="10dp"
+    android:text="_________________________________________"
+    android:textSize="20dp"
+    android:textColor="@color/light_grey"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_remainingprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Remaiming Price"
+            android:textColor="@color/app_color"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="350,999$"
+            android:textColor="@color/black"
+            android:layout_marginLeft="115dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:id="@+id/tv_remainingrupees"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/app_color"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:text="Installments Packages"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tv_installment"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/instant_payment"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:id="@+id/iv_instantpayment"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/twelve_month"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:id="@+id/iv_twelvemonth"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/six_month"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:id="@+id/iv_sixmonth"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/two_month"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:id="@+id/iv_twomonth"/>
+
+</LinearLayout>

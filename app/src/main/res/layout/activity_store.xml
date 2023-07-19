@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vehicle.mart.StoreActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:padding="5dp"
+        android:text="STORE INFORMATION"
+        android:textColor="@color/app_color"
+        android:textSize="34dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="4dp"
+        app:boxCornerRadiusBottomEnd="35dp"
+        app:boxCornerRadiusBottomStart="35dp"
+        app:boxCornerRadiusTopEnd="35dp"
+        app:boxCornerRadiusTopStart="35dp">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_storename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Store Name"
+        android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="4dp"
+        app:boxCornerRadiusBottomEnd="35dp"
+        app:boxCornerRadiusBottomStart="35dp"
+        app:boxCornerRadiusTopEnd="35dp"
+        app:boxCornerRadiusTopStart="35dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_storeaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="Store Address"
+            android:inputType="textPostalAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="4dp"
+        app:boxCornerRadiusBottomEnd="35dp"
+        app:boxCornerRadiusBottomStart="35dp"
+        app:boxCornerRadiusTopEnd="35dp"
+        app:boxCornerRadiusTopStart="35dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_ntn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="NTN Number"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="4dp"
+        app:boxCornerRadiusBottomEnd="35dp"
+        app:boxCornerRadiusBottomStart="35dp"
+        app:boxCornerRadiusTopEnd="35dp"
+        app:boxCornerRadiusTopStart="35dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_termsandcondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="Terms and Conditions"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:id="@+id/btn_save"
+        android:textSize="15dp"
+        android:text="Save"
+        />
+
+</LinearLayout>
