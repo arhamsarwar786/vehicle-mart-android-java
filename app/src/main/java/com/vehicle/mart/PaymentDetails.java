@@ -65,7 +65,7 @@ public class PaymentDetails extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference("payments");
 
         String storeID = getIntent().getStringExtra("storeID");
-
+        String vehicleID = getIntent().getStringExtra("vehicleID");
         String total = getIntent().getStringExtra("total");
 
         int type = getIntent().getIntExtra("type",1);
@@ -116,6 +116,7 @@ uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>()
                 dataMap.put("type", type);
                 dataMap.put("total", total);
                 dataMap.put("amount", amount);
+                dataMap.put("vehicleID", vehicleID);
                 dataMap.put("verify", false);
 
                 databaseRef.child(id).setValue(dataMap)

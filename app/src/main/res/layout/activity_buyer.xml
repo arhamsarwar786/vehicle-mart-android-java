@@ -6,19 +6,21 @@
     android:layout_height="match_parent"
 
     tools:context="com.vehicle.mart.home.BuyerActivity"
-   android:background="@drawable/bg"
 
-    android:scaleType="fitCenter"
+
+
     android:orientation="vertical">
 
+
+
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+
         android:orientation="vertical"
-        tools:context="com.vehicle.mart.BuyerActivity">
 
-
-
+        android:background="@color/app_color"
+        >
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -60,18 +62,14 @@ android:layout_marginLeft="10dp"
         android:layout_marginTop="18dp"
         app:tint="@color/app_color" />
     </LinearLayout>
-<!--    <SearchView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/sv_searchview"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:layout_marginRight="20dp"-->
-<!--        android:layout_marginTop="07dp"-->
-<!--        android:background="@drawable/custom_background"-->
-<!--        android:outlineAmbientShadowColor="@color/light_grey"-->
-<!--        android:queryHint="Search Here"-->
-<!--        android:iconifiedByDefault="false"-->
-<!--        />-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/car"
+            >
+
+        </LinearLayout>
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -89,7 +87,7 @@ android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="255dp"
+                android:layout_marginTop="25dp"
                 android:src="@drawable/card_1"
                 />
 
@@ -98,7 +96,7 @@ android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="255dp"
+                android:layout_marginTop="25dp"
                 android:src="@drawable/card_2" />
 
             <ImageView
@@ -106,7 +104,7 @@ android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="255dp"
+                android:layout_marginTop="25dp"
                 android:src="@drawable/card_3" />
 
             <ImageView
@@ -114,7 +112,7 @@ android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="255dp"
+                android:layout_marginTop="25dp"
                 android:src="@drawable/card_4" />
         </LinearLayout>
     </HorizontalScrollView>
@@ -207,14 +205,16 @@ android:layout_marginLeft="10dp"
 
     </LinearLayout>
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-
-
     </LinearLayout>
+
+
+
 
 </ScrollView>

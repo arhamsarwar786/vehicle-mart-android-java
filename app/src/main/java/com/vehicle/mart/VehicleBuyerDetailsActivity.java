@@ -30,9 +30,14 @@ public class VehicleBuyerDetailsActivity extends AppCompatActivity {
     Vehicle vehicle;
     Store storeData;
     DatabaseReference databaseReference;
+    DatabaseReference paymentReference;
     FirebaseDatabase firebaseDatabase;
     FirebaseAuth firebaseAuth;
+    Boolean isFound = false;
+    String amount, vehicleID,storeID;
+    Integer month = 1;
 
+    Button btn;
 
 
 
@@ -46,6 +51,7 @@ public class VehicleBuyerDetailsActivity extends AppCompatActivity {
 
         vehicle = getIntent().getParcelableExtra("vehicleDetails");
         databaseReference = firebaseDatabase.getReference("stores").child(vehicle.getStoreId());
+        paymentReference = firebaseDatabase.getReference("payments");
         DatabaseReference userRef = firebaseDatabase.getReference("users").child(vehicle.getStoreId());
 
 
@@ -90,17 +96,34 @@ public class VehicleBuyerDetailsActivity extends AppCompatActivity {
             }
         });
 
-        Button btn = findViewById(R.id.buy_now);
+         btn = findViewById(R.id.buy_now);
 //        TextView status = findViewById(R.id.status);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                !vehicleID.equals(vehicle.getVehicleId())
+                Log.wtf("data is here",amount +  " " +month + " " + vehicle.getPrice() );
+    if(isFound && vehicleID.equals(vehicle.getVehicleId())){
 
-                    Intent intent = new Intent(VehicleBuyerDetailsActivity.this, BuyNow_Screen.class);
-                intent.putExtra("vehicleDetail",vehicle);
+        Log.wtf("arham data find", amount + month + storeID +"8349249"+ vehicleID);
 
-                startActivity(intent);
 
+        Intent intent = new Intent(VehicleBuyerDetailsActivity.this, Installment_screen.class);
+        intent.putExtra("priceTotal", amount);
+        intent.putExtra("month", month);
+        intent.putExtra("storeID",storeID);
+        intent.putExtra("vehicleID",vehicleID);
+
+        startActivity(intent);
+
+    }else{
+
+
+        Intent intent = new Intent(VehicleBuyerDetailsActivity.this, BuyNow_Screen.class);
+        intent.putExtra("vehicleDetail",vehicle);
+        startActivity(intent);
+
+    }
 //                progressDialog.cancel();
             }
         });
@@ -143,6 +166,7 @@ public class VehicleBuyerDetailsActivity extends AppCompatActivity {
 //        Toast.makeText(this, vehicle.toString(), Toast.LENGTH_LONG).show();
 
         readStoresFromFirebase();
+        checkPaymentHistory();
 
 
 
@@ -166,10 +190,47 @@ public class VehicleBuyerDetailsActivity extends AppCompatActivity {
                 tvAddress.setText(storeData.getAddress());
 
                 Log.wtf("arham",store.toString() + "arham here for check");
-//                if(store == null){
-////                    Intent intent = new Intent(SellerActivity.this, StoreActivity.class);
-//                    startActivity(intent);
-//                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
+    public void checkPaymentHistory(){
+        paymentReference.orderByChild("buyerID").equalTo(firebaseAuth.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+
+                    String vehicleIDD = dataSnapshot.child("vehicleID").getValue(String.class);
+                    String storeIDD = dataSnapshot.child("storeID").getValue(String.class);
+                    String amountt = dataSnapshot.child("amount").getValue(String.class);
+                    String date = dataSnapshot.child("date").getValue(String.class);
+                    Integer type = dataSnapshot.child("type").getValue(Integer.class);
+                    Boolean verify = dataSnapshot.child("verify").getValue(Boolean.class);
+                    Log.wtf("final testiung",!vehicleIDD.equals(vehicle.getVehicleId()) + vehicleIDD + "77777" + vehicle.getVehicleId());
+
+                    if(vehicleIDD.equals(vehicle.getVehicleId())){
+                        btn.setText("Pay Installment");
+                    }
+
+
+
+                    isFound = true;
+
+                    vehicleID = vehicleIDD;
+                    storeID = storeIDD;
+                    month = type;
+                    amount = amountt;
+
+                    break;
+
+                }
+
             }
 
             @Override

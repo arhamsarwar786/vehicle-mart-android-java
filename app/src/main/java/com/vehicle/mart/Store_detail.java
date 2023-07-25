@@ -10,6 +10,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,7 +38,8 @@ import java.util.UUID;
 public class Store_detail extends AppCompatActivity {
 
 
-    TextInputEditText et_Vehiclename,et_vehicletype,et_transmission,et_description,et_mileage,et_brand,et_model,et_year,et_fueltype,et_enginetype,et_enginecapacity,et_registercity,et_type,et_transactiontype,et_price;
+    TextInputEditText et_Vehiclename,et_transmission,et_description,et_mileage,et_brand,et_model,et_year,et_fueltype,et_enginetype,et_enginecapacity,et_registercity,et_type,et_transactiontype,et_price;
+    AutoCompleteTextView et_vehicletype;
     Button btn_save;
     ImageView imageView,ivAdd;
     Uri uri =null;
@@ -48,6 +52,7 @@ public class Store_detail extends AppCompatActivity {
 
     FirebaseStorage firebaseStorage;
     StorageReference storageReference;
+    String selectedOption = "";
 
     ProgressDialog progressDialog;
 
@@ -60,7 +65,7 @@ public class Store_detail extends AppCompatActivity {
         et_mileage = findViewById(R.id.et_mileage);
         et_description = findViewById(R.id.et_description);
         et_Vehiclename = findViewById(R.id.et_Vehiclename);
-        et_vehicletype = findViewById(R.id.et_vehicletype);
+//        et_vehicletype = findViewById(R.id.et_vehicletype);
         et_brand = findViewById(R.id.et_brand);
         et_model = findViewById(R.id.et_model);
         et_year = findViewById(R.id.et_year);
@@ -83,12 +88,26 @@ public class Store_detail extends AppCompatActivity {
         storageReference = firebaseStorage.getReference();
         storeReference = firebaseDatabase.getReference("stores").child(firebaseAuth.getUid());
 
+        String[] vehicleTypes = {"New Cars", "New Riksha", "Used Cars", "Used Riksha"};
+
+        AutoCompleteTextView etVehicleType = findViewById(R.id.et_vehicletype);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, vehicleTypes);
+        etVehicleType.setAdapter(adapter);
+
+        etVehicleType.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id) {
+                // Get the selected option text and store it in the variable
+                selectedOption = (String) parent.getItemAtPosition(position);
+                Log.wtf("sleeted",selectedOption);
+            }
+        });
         readStoresFromFirebase();
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String vehicleType = et_vehicletype.getText().toString();
+//                String vehicleType = et_vehicletype.getText().toString();
                 String type = et_type.getText().toString();
                 String brand = et_brand.getText().toString();
                 String model = et_model.getText().toString();
@@ -104,7 +123,7 @@ public class Store_detail extends AppCompatActivity {
                 String description = et_description.getText().toString();
 
 
-                boolean res = validateinfo(vehicleType,type,brand,model,year,mileage,transmission,fuelType,engineType,engineCapacity,registerCity,transactionType,price,description,price);
+                boolean res = validateinfo(selectedOption,type,brand,model,year,mileage,transmission,fuelType,engineType,engineCapacity,registerCity,transactionType,price,description,price);
                 Log.wtf("arham", String.valueOf(res));
                 if (res) {
                     progressDialog = ProgressDialog.show(Store_detail.this, "Vehical Adding!", "Please wait", false);
@@ -120,7 +139,7 @@ uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>()
             @Override
             public void onSuccess(Uri uri) {
                 // Create a new Vehicle object with the image URL and other details
-                Vehicle vehicle = new Vehicle(firebaseAuth.getUid(), vehicleType, type, brand, model, year, mileage, transmission, fuelType, engineType, engineCapacity, registerCity, transactionType, price, description, uri.toString(), "pending");
+                Vehicle vehicle = new Vehicle(firebaseAuth.getUid(), selectedOption, type, brand, model, year, mileage, transmission, fuelType, engineType, engineCapacity, registerCity, transactionType, price, description, uri.toString(), "pending");
                 // Save the new Vehicle object to Firebase Realtime Database
                 DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("vehicles");
                 databaseRef.child(id).setValue(vehicle)

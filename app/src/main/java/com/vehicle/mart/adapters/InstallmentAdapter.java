@@ -35,14 +35,15 @@ public class InstallmentAdapter extends RecyclerView.Adapter<InstallmentAdapter.
     int size;
     String total, installment;
     private int position;
-    String storeID;
+    String storeID,vehicleID;
     List paymentList;
 
 
 
-    public InstallmentAdapter(Context context, int size,String total,String installment,String storeID, List paymentList ) {
+    public InstallmentAdapter(Context context, int size,String total,String installment,String storeID,String vehicleID, List paymentList ) {
         this.context = context;
         this.size = size;
+        this.vehicleID = vehicleID;
         this.installment = installment;
         this.total = total;
         this.storeID = storeID;
@@ -119,6 +120,7 @@ public class InstallmentAdapter extends RecyclerView.Adapter<InstallmentAdapter.
                     intent.putExtra("total", total);
                     intent.putExtra("type", size);
                     intent.putExtra("amount", installment);
+                    intent.putExtra("vehicleID",vehicleID);
                     intent.putExtra("date",(day + " - " + month + " - " + year).toString());
                     context.startActivity(intent);
                 }

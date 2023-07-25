@@ -74,6 +74,7 @@ public class BuyNow_Screen extends AppCompatActivity {
                 intent.putExtra("priceTotal", price);
                 intent.putExtra("month", 2);
                 intent.putExtra("storeID",vehicle.getStoreId());
+                intent.putExtra("vehicleID",vehicle.getVehicleId());
                 startActivity(intent);
             }
         });
@@ -87,6 +88,7 @@ public class BuyNow_Screen extends AppCompatActivity {
                 intent.putExtra("priceTotal", price);
                 intent.putExtra("month", 12);
                 intent.putExtra("storeID",vehicle.getStoreId());
+                intent.putExtra("vehicleID",vehicle.getVehicleId());
                 startActivity(intent);
             }
         });
@@ -100,6 +102,7 @@ public class BuyNow_Screen extends AppCompatActivity {
                 intent.putExtra("priceTotal", price);
                 intent.putExtra("month", 6);
                 intent.putExtra("storeID",vehicle.getStoreId());
+                intent.putExtra("vehicleID",vehicle.getVehicleId());
                 startActivity(intent);
             }
         });
@@ -113,6 +116,7 @@ public class BuyNow_Screen extends AppCompatActivity {
                 intent.putExtra("priceTotal", price);
                 intent.putExtra("month", 1);
                 intent.putExtra("storeID",vehicle.getStoreId());
+                intent.putExtra("vehicleID",vehicle.getVehicleId());
                 startActivity(intent);
             }
         });

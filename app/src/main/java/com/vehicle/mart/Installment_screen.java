@@ -44,10 +44,12 @@ public class Installment_screen extends AppCompatActivity {
 
         String totalPrice = getIntent().getStringExtra("priceTotal");
         String storeID = getIntent().getStringExtra("storeID");
+        String vehicleID = getIntent().getStringExtra("vehicleID");
+
 
         int month = getIntent().getIntExtra("month",-1);
 
-        long longValue = Long.parseLong(totalPrice);
+        Double longValue = Double.parseDouble(totalPrice);
 
         longValue = longValue + 20000;
 
@@ -65,7 +67,7 @@ public class Installment_screen extends AppCompatActivity {
         String installmentAmountString = String.valueOf(installmentAmount);
         totalPrice = String.valueOf(longValue);
 
-        InstallmentAdapter adapter = new InstallmentAdapter(Installment_screen.this ,month, totalPrice,installmentAmountString,storeID,paymentList );
+        InstallmentAdapter adapter = new InstallmentAdapter(Installment_screen.this ,month, totalPrice,installmentAmountString,storeID,vehicleID,paymentList );
         rvInstallment.setLayoutManager(new GridLayoutManager(Installment_screen.this, 2));
         rvInstallment.setAdapter(adapter);
 

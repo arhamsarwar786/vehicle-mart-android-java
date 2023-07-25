@@ -172,6 +172,11 @@
             android:label="" >
 
         </activity>
+        <activity
+            android:name="com.vehicle.mart.BuyerNotification"
+            android:label="" >
+
+        </activity>
     </application>
 
 </manifest>

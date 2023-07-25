@@ -2,6 +2,7 @@ package com.vehicle.mart;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -68,8 +69,9 @@ public class Vehicle implements Parcelable {
         return vehicleId;
     }
 
-    public void setVehicleId(String vehicleId) {
-        this.vehicleId = vehicleId;
+    public void setVehicleId(String vehicleIdd) {
+        Log.wtf("test id check",vehicleIdd);
+        this.vehicleId = vehicleIdd;
     }
 
     public String getStoreId() {

@@ -20,10 +20,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.vehicle.mart.BuyerNotification;
 import com.vehicle.mart.HomeAdapter;
 import com.vehicle.mart.R;
 import com.vehicle.mart.See_all_screen;
 import com.vehicle.mart.Vehicle;
+import com.vehicle.mart.VehicleBuyerDetailsActivity;
 import com.vehicle.mart.adapters.BuyerVehicleAdapter;
 import com.vehicle.mart.login;
 import java.util.ArrayList;
@@ -48,7 +50,9 @@ public class BuyerActivity extends AppCompatActivity {
 
 
         // Retrieve the logout ImageButton
+
         ImageButton logoutButton = findViewById(R.id.iv_logout);
+        ImageView notificationButton = findViewById(R.id.iv_notification);
 
         TextView nameText = findViewById(R.id.tv_username);
         readVehicleFromFirebase();
@@ -70,6 +74,7 @@ public class BuyerActivity extends AppCompatActivity {
 
             }
         });
+
 // Set a click listener for the logout ImageButton
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +84,18 @@ public class BuyerActivity extends AppCompatActivity {
                 firebaseAuth.signOut();
                 // For example, navigate to a login screen
                 Intent intent = new Intent(BuyerActivity.this, login.class);
+                startActivity(intent);
+                finish(); // Optional: finish the current activity
+            }
+        });
+
+        notificationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Perform the logout operation
+
+                // For example, navigate to a login screen
+                Intent intent = new Intent(BuyerActivity.this, BuyerNotification.class);
                 startActivity(intent);
                 finish(); // Optional: finish the current activity
             }
@@ -94,6 +111,7 @@ public class BuyerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(BuyerActivity.this, See_all_screen.class);
+                i.putExtra("type","New Cars");
                 startActivity(i);
             }
         });
@@ -101,6 +119,7 @@ public class BuyerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(BuyerActivity.this, See_all_screen.class);
+                i.putExtra("type","Used Cars");
                 startActivity(i);
             }
         });
@@ -108,6 +127,7 @@ public class BuyerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(BuyerActivity.this, See_all_screen.class);
+                i.putExtra("type","New Riksha");
                 startActivity(i);
             }
         });
@@ -115,6 +135,7 @@ public class BuyerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(BuyerActivity.this, See_all_screen.class);
+                i.putExtra("type","Used Riksha");
                 startActivity(i);
             }
         });
@@ -145,9 +166,17 @@ public class BuyerActivity extends AppCompatActivity {
                         Log.wtf("arham",vehicleList + "final data ");
                     }
                 }
+                List<Vehicle> firstFiveVehicles = new ArrayList<>();
 
-                BuyerVehicleAdapter vehicleAdapter = new BuyerVehicleAdapter(BuyerActivity.this,vehicleList);
-                recyclerView.setLayoutManager(new GridLayoutManager(BuyerActivity.this,2));
+// Limit the number of items to 5 or the size of the original list if it's less than 5.
+                int limit = Math.min(5, vehicleList.size());
+
+// Add the first 5 items to the new list.
+                for (int i = 0; i < limit; i++) {
+                    firstFiveVehicles.add(vehicleList.get(i));
+                }
+                BuyerVehicleAdapter vehicleAdapter = new BuyerVehicleAdapter(BuyerActivity.this,firstFiveVehicles);
+                recyclerView.setLayoutManager(new GridLayoutManager(BuyerActivity.this, 5));
                 recyclerView.setAdapter(vehicleAdapter);
             }
 
