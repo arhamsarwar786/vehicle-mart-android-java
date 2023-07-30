@@ -1,14 +1,17 @@
 package com.vehicle.mart;
 
+import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.vehicle.mart.adapters.NotificationAdapter;
 import com.vehicle.mart.adapters.StoreAdapter;
+import com.vehicle.mart.home.BuyerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,12 +36,30 @@ public class BuyerNotification extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FirebaseAuth firebaseAuth;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buyer_notification);
 
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.home) {
+                    startActivity(new Intent(BuyerNotification.this, MainActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.profile) {
+                    startActivity(new Intent(BuyerNotification.this, ProfileActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.history) {
+                    startActivity(new Intent(BuyerNotification.this, History.class));
+                    return true;
+                }
+                return false;
+            }
+        });
         notifyList = new ArrayList<>();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("payments");

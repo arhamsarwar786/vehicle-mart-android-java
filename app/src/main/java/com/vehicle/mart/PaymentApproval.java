@@ -1,13 +1,16 @@
 package com.vehicle.mart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.vehicle.mart.adapters.PaymentAdapter;
 import com.vehicle.mart.adapters.StoreAdapter;
+import com.vehicle.mart.home.BuyerActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,6 +31,7 @@ public class PaymentApproval extends AppCompatActivity {
     List paymentsList;
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
+    BottomNavigationView bottomNavigationView;
 
     RecyclerView recyclerView;
     FirebaseAuth firebaseAuth;
@@ -35,6 +40,24 @@ public class PaymentApproval extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_approve);
          firebaseAuth = FirebaseAuth.getInstance();
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.home) {
+                    startActivity(new Intent(PaymentApproval.this, MainActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.profile) {
+                    startActivity(new Intent(PaymentApproval.this, ProfileActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.history) {
+                    startActivity(new Intent(PaymentApproval.this, History.class));
+                    return true;
+                }
+                return false;
+            }
+        });
 
         paymentsList = new ArrayList<>();
         firebaseDatabase = FirebaseDatabase.getInstance();

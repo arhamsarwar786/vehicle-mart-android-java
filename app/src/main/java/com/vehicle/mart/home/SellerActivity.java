@@ -10,13 +10,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.vehicle.mart.History;
+import com.vehicle.mart.MainActivity;
 import com.vehicle.mart.PaymentApproval;
+import com.vehicle.mart.ProfileActivity;
 import com.vehicle.mart.R;
 import com.vehicle.mart.Signup;
 import com.vehicle.mart.StoreActivity;
@@ -43,6 +48,7 @@ public class SellerActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference,refVehicle;
     Store storeData;
+    BottomNavigationView bottomNavigationView;
 List<Vehicle> vehicleList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,24 @@ List<Vehicle> vehicleList;
         recyclerView = findViewById(R.id.recycler_view);
         iv_addbtn = findViewById(R.id.iv_addbtn);
         payments_approval = findViewById(R.id.payments_approval);
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.home) {
+                    startActivity(new Intent(SellerActivity.this, MainActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.profile) {
+                    startActivity(new Intent(SellerActivity.this, ProfileActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.history) {
+                    startActivity(new Intent(SellerActivity.this, History.class));
+                    return true;
+                }
+                return false;
+            }
+        });
 
         vehicleList = new ArrayList<>();
         firebaseAuth = FirebaseAuth.getInstance();

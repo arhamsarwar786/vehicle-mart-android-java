@@ -40,223 +40,235 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="495dp"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_Name"
             android:layout_width="wrap_content"
             android:layout_height="49dp"
             android:layout_marginLeft="15dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Audi i8"
             android:textColor="@color/app_color"
-            android:id="@+id/tv_Name"
             android:textSize="35dp" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Price"
                 android:textColor="@color/black"
                 android:textSize="16dp"
-                android:fontFamily="@font/poppins_regular"
                 android:textStyle="bold"
 
                 />
+
             <TextView
+                android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="245dp"
-                android:id="@+id/tv_price"
-                android:textColor="@color/black"
-                android:textSize="16dp"
                 android:fontFamily="@font/poppins_regular"
-                />
+                android:textColor="@color/black"
+                android:textSize="16dp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Location"
                 android:textColor="@color/black"
                 android:textSize="16dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
+
             <TextView
+                android:id="@+id/tv_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="215dp"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                android:id="@+id/tv_location"
                 android:fontFamily="@font/poppins_regular"
-                />
+                android:textColor="@color/black"
+                android:textSize="16dp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Mileage"
                 android:textColor="@color/black"
                 android:textSize="16dp"
-                android:fontFamily="@font/poppins_regular"
                 android:textStyle="bold"
 
                 />
+
             <TextView
+                android:id="@+id/tv_mileage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="210dp"
 
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                android:id="@+id/tv_mileage"
+                android:layout_marginLeft="210dp"
                 android:fontFamily="@font/poppins_regular"
-                />
+                android:textColor="@color/black"
+                android:textSize="16dp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Engine"
                 android:textColor="@color/black"
                 android:textSize="16dp"
-                android:fontFamily="@font/poppins_regular"
                 android:textStyle="bold"
 
                 />
+
             <TextView
+                android:id="@+id/tv_engine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="210dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="1500-1900 cc"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:id="@+id/tv_engine"
-                android:fontFamily="@font/poppins_regular"
-                />
+                android:textSize="16dp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Transmission"
                 android:textColor="@color/black"
                 android:textSize="16dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
+
             <TextView
+                android:id="@+id/tv_transmission"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="170dp"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                android:id="@+id/tv_transmission"
-
                 android:fontFamily="@font/poppins_regular"
-                />
+                android:textColor="@color/black"
+
+                android:textSize="16dp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Fuel Type"
                 android:textColor="@color/black"
                 android:textSize="16dp"
-                android:fontFamily="@font/poppins_regular"
                 android:textStyle="bold"
 
                 />
+
             <TextView
+                android:id="@+id/fuel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="172dp"
-                android:textColor="@color/black"
-                android:textSize="16dp"
                 android:fontFamily="@font/poppins_regular"
-                android:id="@+id/fuel"
-                />
+                android:textColor="@color/black"
+                android:textSize="16dp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Sitting Capacity"
                 android:textColor="@color/black"
                 android:textSize="16dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
+
             <TextView
+                android:id="@+id/seats"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="190dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="5"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:fontFamily="@font/poppins_regular"
-                android:id="@+id/seats"
-                />
+                android:textSize="16dp" />
         </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
+            android:fontFamily="@font/poppins_regular"
             android:text="Description:"
             android:textColor="@color/black"
             android:textSize="16dp"
-            android:fontFamily="@font/poppins_regular"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
+
         <TextView
+            android:id="@+id/tv_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
+            android:fontFamily="@font/poppins_regular"
             android:textColor="@color/grey"
             android:textSize="14dp"
-            android:fontFamily="@font/poppins_regular"
-            android:id="@+id/tv_description"
 
             />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="_______________________________________________"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:textColor="@color/app_color"
             android:gravity="center"
-            />
+            android:text="_______________________________________________"
+            android:textColor="@color/app_color"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_sellerdetail"
@@ -268,6 +280,7 @@
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -283,24 +296,25 @@
                 android:textColor="@color/app_color"
                 android:textSize="23dp"
                 android:textStyle="bold" />
+
             <ImageView
+                android:id="@+id/iv_whatsapp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/vector"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="8dp"
-                android:id="@+id/iv_whatsapp"
-                />
+                android:src="@drawable/vector" />
 
         </LinearLayout>
+
         <TextView
+            android:id="@+id/tv_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
+            android:fontFamily="@font/poppins_regular"
             android:textColor="@color/grey"
             android:textSize="14dp"
-            android:fontFamily="@font/poppins_regular"
-            android:id="@+id/tv_address"
 
             />
 
@@ -308,23 +322,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <ImageView
+                android:id="@+id/iv_accept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/accept"
-                android:layout_marginTop="18dp"
                 android:layout_marginLeft="40dp"
-                android:id="@+id/iv_accept"
-                />
-<!--            <ImageView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/reject"-->
-<!--                android:layout_marginTop="18dp"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:id="@+id/iv_reject"-->
-<!--                />-->
+                android:layout_marginTop="18dp"
+                android:src="@drawable/accept" />
+            <!--            <ImageView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:src="@drawable/reject"-->
+            <!--                android:layout_marginTop="18dp"-->
+            <!--                android:layout_marginLeft="30dp"-->
+            <!--                android:id="@+id/iv_reject"-->
+            <!--                />-->
         </LinearLayout>
     </LinearLayout>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu_main" />
 </LinearLayout>

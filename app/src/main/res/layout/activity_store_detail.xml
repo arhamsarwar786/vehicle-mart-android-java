@@ -47,21 +47,52 @@
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Your existing layout XML -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Vehicle Type">
+            android:layout_marginLeft="30dp"
+           android:layout_marginRight="30dp"
+            >
 
-            <AutoCompleteTextView
-                android:paddingHorizontal="20dp"
-                android:layout_marginHorizontal="40dp"
-                android:id="@+id/et_vehicletype"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_regular"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                app:boxCornerRadiusBottomEnd="35dp"
+                app:boxCornerRadiusBottomStart="35dp"
+                app:boxCornerRadiusTopEnd="35dp"
+                app:boxCornerRadiusTopStart="35dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/et_vehicletype"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:hint="Vehicle Type"
+                    android:paddingHorizontal="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:inputType="text"
+                    android:completionThreshold="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+        <!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <AutoCompleteTextView-->
+<!--                android:id="@+id/et_vehicletype"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Vehicle Type"-->
+<!--                android:background="@color/white"-->
+<!--                android:paddingHorizontal="10dp"-->
+<!--                android:fontFamily="@font/poppins_regular"-->
+<!--                android:inputType="text"-->
+<!--                android:completionThreshold="1" />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

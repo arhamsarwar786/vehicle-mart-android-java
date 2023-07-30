@@ -9,12 +9,14 @@ import android.os.Bundle;
 
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+import com.vehicle.mart.home.BuyerActivity;
 import com.vehicle.mart.model.Store;
 
 import java.net.URLEncoder;
@@ -38,7 +41,7 @@ public class VehicleBuyerDetailsActivity extends AppCompatActivity {
     Integer month = 1;
 
     Button btn;
-
+    BottomNavigationView bottomNavigationView;
 
 
     @Override
@@ -54,6 +57,24 @@ public class VehicleBuyerDetailsActivity extends AppCompatActivity {
         paymentReference = firebaseDatabase.getReference("payments");
         DatabaseReference userRef = firebaseDatabase.getReference("users").child(vehicle.getStoreId());
 
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.home) {
+                    startActivity(new Intent(VehicleBuyerDetailsActivity.this, MainActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.profile) {
+                    startActivity(new Intent(VehicleBuyerDetailsActivity.this, ProfileActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.history) {
+                    startActivity(new Intent(VehicleBuyerDetailsActivity.this, History.class));
+                    return true;
+                }
+                return false;
+            }
+        });
 
         Log.wtf("arham",vehicle.getBrand());
 

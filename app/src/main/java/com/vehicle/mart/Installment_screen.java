@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -16,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.vehicle.mart.adapters.InstallmentAdapter;
+import com.vehicle.mart.home.BuyerActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,6 +32,7 @@ public class Installment_screen extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
+    BottomNavigationView bottomNavigationView;
     List paymentList = new ArrayList<>(); // Create an ArrayList to store the payments
 
 
@@ -41,6 +46,26 @@ public class Installment_screen extends AppCompatActivity {
 
 
         databaseReference = firebaseDatabase.getReference("payments");
+
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.home) {
+                    startActivity(new Intent(Installment_screen.this, MainActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.profile) {
+                    startActivity(new Intent(Installment_screen.this, ProfileActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.history) {
+                    startActivity(new Intent(Installment_screen.this, History.class));
+                    return true;
+                }
+                return false;
+            }
+        });
+
 
         String totalPrice = getIntent().getStringExtra("priceTotal");
         String storeID = getIntent().getStringExtra("storeID");

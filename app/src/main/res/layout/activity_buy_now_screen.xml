@@ -31,8 +31,8 @@
         android:layout_height="wrap_content"
         android:text="1500 to 1900 cc"
         android:textColor="@color/black"
-        android:textSize="18dp"
-        android:layout_marginLeft="15dp"
+        android:textSize="15dp"
+        android:layout_marginLeft="17dp"
         android:id="@+id/tv_cc"
         />
     <TextView
@@ -40,8 +40,8 @@
         android:layout_height="wrap_content"
         android:text="Petrol and Diesel"
         android:textColor="@color/black"
-        android:textSize="18dp"
-        android:layout_marginLeft="15dp"
+        android:textSize="15dp"
+        android:layout_marginLeft="17dp"
         android:id="@+id/tv_type"
         />
     <TextView
@@ -49,18 +49,18 @@
         android:layout_height="wrap_content"
         android:text="25 km/Litre"
         android:textColor="@color/black"
-        android:textSize="18dp"
-        android:layout_marginLeft="15dp"
+        android:textSize="15dp"
+        android:layout_marginLeft="17dp"
         android:id="@+id/tv_litre"
         />
 </LinearLayout>
 
         <ImageView
             android:id="@+id/iv_car"
-            android:layout_width="221dp"
-            android:layout_height="155dp"
-            android:layout_margin="15dp"
+            android:layout_width="200dp"
+            android:layout_height="140dp"
             android:padding="5dp"
+            android:layout_marginLeft="80dp"
             android:src="@drawable/car" />
 
     </LinearLayout>
@@ -73,7 +73,8 @@
         android:layout_height="wrap_content"
         android:text="Price"
         android:textSize="20dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="5dp"
         android:textStyle="bold"
         android:textColor="@color/app_color"
         android:id="@+id/tv_price"/>
@@ -82,9 +83,9 @@
         android:layout_height="wrap_content"
         android:text="350,999$"
         android:textColor="@color/black"
-        android:layout_marginLeft="240dp"
+        android:layout_marginLeft="170dp"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:id="@+id/tv_rupees"/>
     </LinearLayout>
     <LinearLayout
@@ -96,7 +97,7 @@
             android:layout_height="wrap_content"
             android:text="Token Price"
             android:textSize="20dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="17dp"
             android:textStyle="bold"
             android:textColor="@color/app_color"
             android:id="@+id/tv_tokenprice"/>
@@ -105,17 +106,17 @@
             android:layout_height="wrap_content"
             android:text="350,99$"
             android:textColor="@color/black"
-            android:layout_marginLeft="190dp"
+            android:layout_marginLeft="110dp"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:id="@+id/tv_tokenrupees"/>
     </LinearLayout>
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textStyle="bold"
-    android:layout_marginLeft="10dp"
-    android:text="_________________________________________"
+    android:gravity="center"
+    android:text="____________________________________"
     android:textSize="20dp"
     android:textColor="@color/light_grey"/>
     <LinearLayout
@@ -127,7 +128,7 @@
             android:id="@+id/tv_remainingprice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="17dp"
             android:text="Remaiming Price"
             android:textColor="@color/app_color"
             android:textSize="20dp"
@@ -138,9 +139,9 @@
             android:layout_height="wrap_content"
             android:text="350,999$"
             android:textColor="@color/black"
-            android:layout_marginLeft="115dp"
+            android:layout_marginLeft="55dp"
             android:textStyle="bold"
-            android:textSize="25dp"
+            android:textSize="22dp"
             android:id="@+id/tv_remainingrupees"/>
     </LinearLayout>
     <TextView
@@ -150,36 +151,44 @@
         android:textSize="28dp"
         android:textStyle="bold"
         android:text="Installments Packages"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
         android:id="@+id/tv_installment"/>
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:src="@drawable/instant_payment"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/iv_instantpayment"/>
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:src="@drawable/twelve_month"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="1dp"
         android:id="@+id/iv_twelvemonth"/>
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:src="@drawable/six_month"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="1dp"
         android:id="@+id/iv_sixmonth"/>
+
     <ImageView
-        android:layout_width="wrap_content"
+        android:id="@+id/iv_twomonth"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/two_month"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:id="@+id/iv_twomonth"/>
+        android:layout_marginTop="1dp"
+        android:src="@drawable/two_month" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_marginTop="93dp"
+        app:menu="@menu/menu_main" />
 
 </LinearLayout>

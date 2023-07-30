@@ -23,7 +23,7 @@
             android:text="Date"
             android:textColor="@color/white"
             android:id="@+id/date"
-            android:textSize="25sp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -40,7 +40,7 @@
                 android:gravity="left"
                 android:text="Payment:"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="13dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -52,7 +52,7 @@
                 android:text="100"
                 android:textColor="@color/white"
                 android:id="@+id/total"
-                android:textSize="20sp"
+                android:textSize="13dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -68,9 +68,9 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:gravity="left"
-                android:text="Installment:"
+                android:text="Installme-nt:"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="13dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -82,7 +82,7 @@
                 android:text="100"
                 android:textColor="@color/white"
                 android:id="@+id/instal"
-                android:textSize="20sp"
+                android:textSize="13dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -100,7 +100,7 @@
                 android:gravity="left"
                 android:text="Status:"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="13dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -112,7 +112,7 @@
                 android:text="100"
                 android:id="@+id/status"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="13dp"
                 android:textStyle="bold" />
         </LinearLayout>
         <Button
@@ -124,7 +124,7 @@
             android:text="Pay now"
             android:id="@+id/payNowBtn"
             android:textColor="@color/app_color"
-            android:textSize="20sp"
+            android:textSize="13dp"
             android:textStyle="bold" />
 
     </LinearLayout>

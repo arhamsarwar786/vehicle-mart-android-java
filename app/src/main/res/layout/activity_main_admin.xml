@@ -16,6 +16,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="7dp"
+            android:padding="5dp"
             android:src="@drawable/ic_baseline_person_24"
             android:id="@+id/iv_avatar"
             app:tint="@color/app_color" />
@@ -23,36 +26,45 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Esha"
-            android:id="@+id/tv_username"
-            android:textColor="@color/app_color"
+            android:layout_marginLeft="01dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/poppins_regular"
+            android:text="Esha"
+            android:textColor="@color/app_color"
             android:textSize="16dp"
-            android:layout_marginTop="19dp"
+            android:id="@+id/tv_username"
+
  />
 
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_notifications_24"
-            android:id="@+id/iv_notification"
-            android:layout_marginTop="18dp"
-            app:tint="@color/app_color" />
+
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_notifications_24"
+            android:layout_marginTop="11dp"
+            android:src="@drawable/ic_baseline_logout_24"
+            app:tint="@color/app_color"
             android:id="@+id/iv_logout"
-
-            android:layout_marginTop="18dp"
-            app:tint="@color/app_color" />
+            android:layout_marginLeft="140dp"
+            />
 
 
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textColor="@color/app_color"
+            android:textSize="12dp"
+            android:layout_marginLeft="300dp"/>
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -70,6 +82,13 @@
         android:id="@+id/iv_addbtn"
      />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationVieww"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        app:menu="@menu/menu_main" />
 
 
 </LinearLayout>

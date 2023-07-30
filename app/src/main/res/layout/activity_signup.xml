@@ -116,8 +116,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="Contact Number"
-                android:inputType="number" />
+                android:hint="Contact Number         +92XXXXXXXXXX"
+                android:inputType="number"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

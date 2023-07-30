@@ -10,13 +10,19 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.vehicle.mart.AdminStoreVerification;
+import com.vehicle.mart.History;
+import com.vehicle.mart.MainActivity;
+import com.vehicle.mart.ProfileActivity;
+
 import com.vehicle.mart.R;
 import com.vehicle.mart.Signup;
 import com.vehicle.mart.StoreActivity;
@@ -25,6 +31,7 @@ import com.vehicle.mart.Vehicle;
 import com.vehicle.mart.adapters.VehicleAdapter;
 import com.vehicle.mart.adapters.VehicleAdminAdapter;
 import com.vehicle.mart.login;
+
 import com.vehicle.mart.model.Store;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -44,6 +51,8 @@ public class AdminActivity extends AppCompatActivity {
     Store storeData;
     List<Vehicle> vehicleList;
     ImageView iv_addbtn;
+    BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +75,7 @@ public class AdminActivity extends AppCompatActivity {
         iv_addbtn = findViewById(R.id.iv_addbtn);
         readVehicleFromFirebase();
 
+
         userRef.addValueEventListener(new ValueEventListener() {
 
 
@@ -84,7 +94,23 @@ public class AdminActivity extends AppCompatActivity {
 
             }
         });
-
+        bottomNavigationView = findViewById(R.id.bottomNavigationVieww);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.home) {
+                    startActivity(new Intent(AdminActivity.this, MainActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.profile) {
+                    startActivity(new Intent(AdminActivity.this, ProfileActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.history) {
+                    startActivity(new Intent(AdminActivity.this, History.class));
+                    return true;
+                }
+                return false;
+            }
+        });
         // Retrieve the logout ImageButton
         ImageButton logoutButton = findViewById(R.id.iv_logout);
 

@@ -1,21 +1,25 @@
 package com.vehicle.mart;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Picasso;
+import com.vehicle.mart.home.BuyerActivity;
 
 public class BuyNow_Screen extends AppCompatActivity {
 
     Vehicle vehicle;
-
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,24 @@ public class BuyNow_Screen extends AppCompatActivity {
         TextView tokenPrice = findViewById(R.id.tv_tokenrupees);
         TextView totalPrice = findViewById(R.id.tv_remainingrupees);
         ImageView image = findViewById(R.id.iv_car);
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.home) {
+                    startActivity(new Intent(BuyNow_Screen.this, MainActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.profile) {
+                    startActivity(new Intent(BuyNow_Screen.this, ProfileActivity.class));
+                    return true;
+                } else if (item.getItemId() == R.id.history) {
+                    startActivity(new Intent(BuyNow_Screen.this, History.class));
+                    return true;
+                }
+                return false;
+            }
+        });
 
         carName.setText(vehicle.getBrand());
         tvCC.setText(vehicle.getMileage());

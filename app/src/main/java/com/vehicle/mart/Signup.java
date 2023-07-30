@@ -145,9 +145,12 @@ public class Signup extends AppCompatActivity {
         } else if (contact.length() == 0) {
             et_contact.requestFocus();
             et_contact.setError("THIS FIELD IS REQUIRED");
-        } else if (contact.length() < 11 || contact.length() > 11) {
+            return false;
+        } else if (!contact.startsWith("+92")&&(contact.length() < 11 || contact.length() > 11)) {
+
             et_contact.requestFocus();
             et_contact.setError("ENTER VALID NUMBER");
+            return false;
         } else if (email.length() == 0) {
             et_email.requestFocus();
             et_email.setError("FIELD CANNOT BE EMPTY");
